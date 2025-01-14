@@ -17,7 +17,7 @@ int main() {
 
     switch (appChoice) {
       case 1:
-        calc();
+        mod1_calc();
         break;
       case 3:
         mod3_tempConversion();

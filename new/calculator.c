@@ -13,8 +13,7 @@ void mod1_calc() {
 
   printf("Simple Calculator\n\n");
 
-  do {
-    printf("Enter first number: ");
+  printf("Enter first number: ");
     scanf("%f", &num1);
     printf("Enter second number: ");
     scanf("%f", &num2); 
@@ -22,6 +21,7 @@ void mod1_calc() {
     displayMenu();
     printf("Choose an operation (1-4): ");
     scanf("%d", &choice);
+    getchar(); // Clear input buffer
 
     switch (choice) {
       case 1:
@@ -34,12 +34,12 @@ void mod1_calc() {
         break;
       case 3:
         result = multiply(num1, num2);
-        printf("Result: %.2f * %.2f = %.2f\n", num1, num2, result);
+        printf("Result: %.2f * %.2f = %.2f", num1, num2, result);
         break;
       case 4:
         if (num2 != 0) {
           result = divide(num1, num2);
-          printf("Result: %.2f / %.2f = %.2f\n", num1, num2, result);
+          printf("Result: %.2f / %.2f = %.2f", num1, num2, result);
         } else {
           printf("Error: Division by zero is not allowed.\n");
         }
@@ -47,10 +47,8 @@ void mod1_calc() {
       default:
         printf("Invalid choice. Please select a valid operation.\n");
     }
+  
 
-  } while (choice >= 1 && choice <= 4);
-
-  return 0;
 }
 
 void displayMenu() {
