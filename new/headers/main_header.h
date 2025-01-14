@@ -1,5 +1,5 @@
-#ifndef TEMPERATURE_BANK_H
-#define TEMPERATURE_BANK_H
+#ifndef MAIN_HEADER_H
+#define MAIN_HEADER_H
 
 // TEMPERATURE CONVERSION MODULE
 void mod3_tempConversion();
@@ -16,4 +16,4 @@ char* valid2_againChoice(char* againChoice, int valid_size);
 
 // CALCULATOR MODULE
 void mod1_calc();
-#endif // TEMPERATURE_BANK_H
+#endif // MAIN_HEADER_H

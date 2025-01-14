@@ -1,4 +1,4 @@
-#include "temperature_bank.h"
+#include "main_header.h"
 #include <stdio.h>
 
 void displayMenu();
