@@ -14,6 +14,6 @@ void mod5_menuPrompts();
 int valid1_appChoice();
 char* valid2_againChoice(char* againChoice, int valid_size);
 
-//
+// CALCULATOR MODULE
 void mod1_calc();
 #endif // TEMPERATURE_BANK_H
