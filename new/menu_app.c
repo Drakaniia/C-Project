@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 // MENU FOR THE APPLICATION MODULE
 
@@ -28,7 +29,7 @@ static void menuDisplay() {
 int valid1_appChoice() {
   int appChoice;
 
-  while (1) {
+  while (true) {
     printf("Enter your choice (3 or 4): ");
     if (scanf("%d", &appChoice) == 1 && (appChoice == 3 || 
                                         appChoice == 4 ||
@@ -45,7 +46,7 @@ int valid1_appChoice() {
 
 // Another app choice validation
 char* valid2_againChoice(char* againChoice, int valid_size) {
-  while (1) {
+  while (true) {
     printf("\nDo you want to exit? (Yes/No): ");
     if (fgets(againChoice, valid_size, stdin)) {
       againChoice[strcspn(againChoice, "\n")] = '\0'; // Remove newline
