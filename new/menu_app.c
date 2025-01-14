@@ -17,10 +17,22 @@ void mod5_menuPrompts() {
 static void menuDisplay() {
 
   printf("[BASIC APPLICATION]\n");
-  printf("[1] Calculator\n");
-  printf("[2] Polygon Area Calculator\n");
-  printf("[3] Temperature Conversion\n");
-  printf("[4] Bank Management System\n");
+  printf("\033[1;31m[1] Calculator\033[0m\n");
+  printf("\033[1;36m[2] Polygon Area Calculator\033[0m\n"); 
+  printf("\033[1;34m[3] Temperature Conversion\033[0m\n");      // Blue
+  printf("\033[1;33m[4] Bank Management System\033[0m\n");    // Yellow
+  // printf("\033[1;31mThis is red text.\033[0m\n");
+  /*
+    printf("\033[1;31mThis is Red.\033[0m\n");       // Red
+    printf("\033[1;32mThis is Green.\033[0m\n");     // Green
+    printf("\033[1;35mThis is Magenta.\033[0m\n");   // Magenta
+    printf("\033[1;36mThis is Cyan.\033[0m\n");      // Cyan
+    printf("\033[1;37mThis is White.\033[0m\n");     // White
+    printf("\033[1;30mThis is Gray.\033[0m\n");      // Gray
+    printf("\033[1;90mThis is Bright Gray.\033[0m\n"); // Bright Gray
+    printf("\033[1;91mThis is Bright Red.\033[0m\n"); // Bright Red
+
+  */
 
 }
 
