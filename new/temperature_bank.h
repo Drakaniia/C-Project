@@ -14,5 +14,6 @@ void mod5_menuPrompts();
 int valid1_appChoice();
 char* valid2_againChoice(char* againChoice, int valid_size);
 
-
+// gcc main.c menu_app.c temp_conversion.c bank_system.c -o main -Wall -g
+// ./main
 #endif // TEMPERATURE_BANK_H
