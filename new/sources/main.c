@@ -10,6 +10,9 @@
 
   // run the program with the following command:
     .\allapp
+
+  // Exit terminal with the following command:
+    exit
 */
 
 int main() {
