@@ -30,7 +30,7 @@ int valid1_appChoice() {
   int appChoice;
 
   while (true) {
-    printf("Enter your choice (3 or 4): ");
+    printf("Enter your choice (1 - 4): ");
     if (scanf("%d", &appChoice) == 1 && (appChoice == 3 || 
                                         appChoice == 4 ||
                                         appChoice == 1)) {
