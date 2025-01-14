@@ -1,3 +1,4 @@
+#include "temperature_bank.h"
 #include <stdio.h>
 
 // Function prototypes
@@ -7,7 +8,7 @@ float subtract(float a, float b);
 float multiply(float a, float b);
 float divide(float a, float b);
 
-int main() {
+void calc() {
     float num1, num2, result;
     int choice;
 

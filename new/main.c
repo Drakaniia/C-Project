@@ -16,6 +16,9 @@ int main() {
     appChoice = valid1_appChoice();
 
     switch (appChoice) {
+      case 1:
+        calc();
+        break;
       case 3:
         mod3_tempConversion();
         break;
