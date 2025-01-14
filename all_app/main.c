@@ -37,8 +37,6 @@ int main() {
 
 
 
-// Comment
-// Hello World!!
 
 
 
