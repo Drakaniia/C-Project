@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1736828217 source:c:\backend_devs\c\all_app\bank_system.c
+	"temperature_bank.h"
+	<stdio.h>
+	<stdlib.h>
+
+1736828179 source:c:\backend_devs\c\all_app\main.c
+	"temperature_bank.h"
+	<stdio.h>
+	<string.h>
+
+1736828179 source:c:\backend_devs\c\all_app\temp_conversion.c
+	"temperature_bank.h"
+	<stdio.h>
+	<stdlib.h>
+
+1736827666 c:\backend_devs\c\all_app\temperature_bank.h
+
+1736828179 source:c:\backend_devs\c\all_app\menu_app.c
+	"temperature_bank.h"
+	<stdio.h>
+	<stdlib.h>
+
