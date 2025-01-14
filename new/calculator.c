@@ -7,7 +7,7 @@ float subtract(float a, float b);
 float multiply(float a, float b);
 float divide(float a, float b);
 
-int main() {
+void mod1_calc() {
     float num1, num2, result;
     int choice;
 
