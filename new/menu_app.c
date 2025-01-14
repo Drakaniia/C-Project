@@ -1,6 +1,7 @@
 #include "temperature_bank.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 // MENU FOR THE APPLICATION MODULE
 
