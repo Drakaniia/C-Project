@@ -17,7 +17,7 @@ void mod1_calc() {
     printf("Enter first number: ");
     scanf("%f", &num1);
     printf("Enter second number: ");
-    scanf("%f", &num2);
+    scanf("%f", &num2); 
 
     displayMenu();
     printf("Choose an operation (1-4): ");
