@@ -1,6 +1,7 @@
 #include "main_header.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 // MAIN METHOD FOR EXECUTION
 
@@ -36,6 +37,10 @@ int main() {
       case 4:
         mod4_bankSystem();
         break;
+      case 5:
+        // printf("Exiting the program...\n\n");
+        printf("\033[1;35mExiting the program...\033[0m\n\n");                       // Purple
+        exit(0);
       default:
         printf("Invalid Choice! Please try again.\n");
         break;
