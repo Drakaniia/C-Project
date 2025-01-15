@@ -85,8 +85,8 @@ static void tempFahrenhiet() {
   scanf("%f",&Fahrenhiet);
   getchar();
 
-  Kelvin = (Fahrenhiet - 32.0) * 5/9 +273.15;
-  Celsius = (Fahrenhiet - 32.0) * 5/9;
+  Kelvin = (Fahrenhiet - 32.0) * 5 / 9 + 273.15;
+  Celsius = (Fahrenhiet - 32.0) * 5 / 9;
   printf("In Celsius the value is : %.2f\n", Celsius);
   printf("In Kevlin the value is : %.2f\n", Kelvin);
 }
