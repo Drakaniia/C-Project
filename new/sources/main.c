@@ -36,9 +36,9 @@ int main() {
         break;
       case 4:
         mod4_bankSystem();
+        getchar();
         break;
       case 5:
-        // printf("Exiting the program...\n\n");
         printf("\033[1;35mExiting the program...\033[0m\n\n");                       // Purple
         exit(0);
       default:

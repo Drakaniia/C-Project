@@ -5,8 +5,6 @@
 
 #define MAX_ACCOUNTS 100
 
-// BANK MANAGEMENT SYSTEM MODULE
-// static void anotherFunction();
 typedef struct {
   int account_number;
   char name[100];
@@ -19,26 +17,26 @@ typedef struct {
 } Bank;
 
 // Function prototypes
-void init_bank(Bank *bank);
+static void init_bank(Bank *bank);
 
-int create_account(Bank *bank, 
-                  int account_number, 
-                  const char *name, 
-                  double initial_deposit);
+static int create_account(Bank *bank, 
+          int account_number, 
+          const char *name, 
+          double initial_deposit);
 
-int deposit(Bank *bank, 
-            int account_number, 
-            double amount);
+static int deposit(Bank *bank, 
+      int account_number, 
+      double amount);
 
-int withdraw(Bank *bank, 
-            int account_number, 
-            double amount);
+static int withdraw(Bank *bank, 
+      int account_number, 
+      double amount);
 
-double check_balance(Bank *bank, 
-                    int account_number);
+static double check_balance(Bank *bank, 
+          int account_number);
 
-int close_account(Bank *bank, 
-                  int account_number);
+static int close_account(Bank *bank, 
+          int account_number);
 
 // Function to manage the bank system
 void mod4_bankSystem() {
@@ -49,13 +47,15 @@ void mod4_bankSystem() {
   char name[100];
 
   while (1) {
-    printf("\nBanking System Menu:\n");
+    /* code */
+  
+    printf("\n\033[1;33mBank Management System Menu:\033[0m\n");
     printf("1. Create Account\n");
     printf("2. Deposit\n");
     printf("3. Withdraw\n");
     printf("4. Check Balance\n");
     printf("5. Close Account\n");
-    printf("6. Exit\n");
+    printf("6. \033[1;35mExit\033[0m\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
@@ -64,9 +64,9 @@ void mod4_bankSystem() {
         printf("Enter account number: ");
         scanf("%d", &account_number);
         printf("Enter your name: ");
-        getchar(); // to consume newline character left by scanf
+        getchar(); 
         fgets(name, 100, stdin);
-        name[strcspn(name, "\n")] = '\0'; // Remove newline character
+        name[strcspn(name, "\n")] = '\0'; 
         printf("Enter initial deposit: ");
         scanf("%lf", &amount);
         create_account(&bank, account_number, name, amount);
@@ -119,24 +119,24 @@ void mod4_bankSystem() {
         break;
 
       case 6:
-        printf("Exiting...\n");
+        // printf("6. \033[1;35mExit\033[0m\n");
+        printf("\033[1;35mExiting...\033[0m\n\n");
         exit(0);
 
       default:
         printf("Invalid choice. Try again.\n");
+        break;
     }
   }
-
-  // anotherFunction();
 }
 
 
 // Function definitions
-void init_bank(Bank *bank) {
+static void init_bank(Bank *bank) {
   bank->account_count = 0;
 }
 
-int create_account(Bank *bank, 
+static int create_account(Bank *bank, 
                   int account_number, 
                   const char *name, 
                   double initial_deposit) {
@@ -156,7 +156,7 @@ int create_account(Bank *bank,
   return 1;
 }
 
-int deposit(Bank *bank, 
+static int deposit(Bank *bank, 
             int account_number, 
             double amount) {
   for (int i = 0; i < bank->account_count; i++) {
@@ -171,7 +171,7 @@ int deposit(Bank *bank,
   return 0;
 }
 
-int withdraw(Bank *bank, 
+static int withdraw(Bank *bank, 
             int account_number, 
             double amount) {
   for (int i = 0; i < bank->account_count; i++) {
@@ -186,7 +186,7 @@ int withdraw(Bank *bank,
   return 0;
 }
 
-double check_balance(Bank *bank, 
+static double check_balance(Bank *bank, 
                     int account_number) {
   for (int i = 0; i < bank->account_count; i++) {
     if (bank->accounts[i].account_number == account_number) {
@@ -196,7 +196,7 @@ double check_balance(Bank *bank,
   return -1;
 }
 
-int close_account(Bank *bank, 
+static int close_account(Bank *bank, 
                   int account_number) {
   for (int i = 0; i < bank->account_count; i++) {
     if (bank->accounts[i].account_number == account_number) {
@@ -209,7 +209,6 @@ int close_account(Bank *bank,
   }
   return 0;
 }
-
 
 
 
