@@ -221,25 +221,3 @@ int close_account(Bank *bank,
 
 
 
-/*
-static void anotherFunction() { 
-  printf("This is a bank system app!!\n");
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
