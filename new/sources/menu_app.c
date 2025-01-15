@@ -30,17 +30,31 @@ int valid1_appChoice() {
   int appChoice;
 
   while (true) {
-    printf("Enter your choice (1 - 4): ");
-    if (scanf("%d", &appChoice) == 1 && (appChoice == 3 || 
-                                        appChoice == 4 ||
-                                        appChoice == 1)) {
-      while (getchar() != '\n'); // Clear input buffer
-      break;
+    printf("Enter your choice (1, 2, 3, or 4): ");
+    if (scanf("%d", &appChoice) == 1 && (appChoice >= 1 && appChoice <= 4)) {
+      while (getchar() != '\n'); // Clear any trailing newline or characters
+      return appChoice;
     }
-    printf("Invalid input! Please enter 3 or 4.\n");
+    printf("Invalid input! Please enter a valid choice (1, 2, 3, or 4).\n");
     while (getchar() != '\n'); // Clear invalid input
   }
 
+
+/*
+  while (true) {
+    printf("Enter your choice: ");
+    if (scanf("%d", &appChoice) == 1 && (appChoice == 3 || 
+                                        appChoice == 4 ||
+                                        appChoice == 1 ||
+                                        appChoice == 2)) {
+      while (getchar() != '\n'); // Clear input buffer
+      break;
+    }
+    printf("Invalid input! Please enter again.\n");
+    while (getchar() != '\n'); // Clear invalid input
+  }
+
+*/
   return appChoice;
 }
 
