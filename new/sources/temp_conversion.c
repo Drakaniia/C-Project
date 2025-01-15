@@ -41,8 +41,8 @@ void mod3_tempConversion() {
 
 // Temperature conversion menu display
 static void tempConMenuDisplay(int* choice) {
-  printf("Temperature Conversion Program\n");
-  printf("Choose the unit you want to convert: \n");
+  printf("\n\033[1;34mTemperature Conversion Program\033[0m\n");
+  printf("Choose the unit you want to convert:\n");
   printf("[1] Kelvin\n");
   printf("[2] Celsius\n");
   printf("[3] Fahrenhiet");

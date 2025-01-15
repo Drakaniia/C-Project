@@ -17,7 +17,7 @@ void mod5_menuPrompts() {
 // Four application displays
 static void menuDisplay() {
 
-  printf("[BASIC APPLICATION]\n");
+  printf("\n[BASIC APPLICATION]\n");
   printf("\033[1;31m[1] Calculator\033[0m\n");
   printf("\033[1;36m[2] Polygon Area Calculator\033[0m\n"); 
   printf("\033[1;34m[3] Temperature Conversion\033[0m\n");      // Blue
