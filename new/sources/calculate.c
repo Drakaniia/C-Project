@@ -1,6 +1,5 @@
 #include "main_header.h"
 #include <stdio.h>
-#include <stdio.h>
 #include <math.h>
 
 // Function prototypes
