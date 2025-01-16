@@ -41,6 +41,7 @@ static int close_account(Bank *bank,
 // Function to manage the bank system
 void mod4_bankSystem() {
     Bank bank;
+    
   init_bank(&bank);
   int account_number, choice;
   double amount;
