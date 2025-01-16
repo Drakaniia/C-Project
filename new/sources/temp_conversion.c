@@ -58,10 +58,10 @@ static void tempConMenuDisplay() {
 
 // Kelvin to Celsius and Fahrenheit conversion
 static void tempKelvin() {
-  float Kelvin, Celsius, Fahrenheit; 
+  double Kelvin, Celsius, Fahrenheit; 
   
   printf("Enter the temperature in kelvin: ");
-  while ((scanf("%f", &Kelvin)) != 1 || Kelvin == 0) {
+  while ((scanf("%lf", &Kelvin)) != 1 || Kelvin == 0) {
     while (getchar() != '\n');
     printf("Invalid input. Enter a valid temperature in kelvin: ");
   }
@@ -74,10 +74,10 @@ static void tempKelvin() {
 
 // Celsius to Kelvin and Fahrenheit conversion
 static void tempCelsius() {
-  float Celsius, Kelvin, Fahrenhiet;
+  double Celsius, Kelvin, Fahrenhiet;
 
   printf("Enter the temperature in Celsius: ");
-  while ((scanf("%f", &Celsius)) != 1 || Celsius == 0) {
+  while ((scanf("%lf", &Celsius)) != 1 || Celsius == 0) {
     while (getchar() != '\n');
     printf("Invalid input. Enter a valid temperature in Celsius: ");
   }
@@ -90,10 +90,10 @@ static void tempCelsius() {
 
 // Fahrenhiet to Celsius and Kelvin conversion
 static void tempFahrenhiet() {
-  float Celsius, Kelvin, Fahrenhiet;
+  double Celsius, Kelvin, Fahrenhiet;
 
   printf("Enter the temperature in fahrenhite: ");
-  while ((scanf("%f", &Fahrenhiet)) != 1 || Fahrenhiet == 0) {
+  while ((scanf("%lf", &Fahrenhiet)) != 1 || Fahrenhiet == 0) {
     while (getchar() != '\n');
     printf("Invalid input. Enter a valid temperature in Fahrenheit: ");
   }

@@ -16,4 +16,7 @@ char* valid2_againChoice(char* againChoice, int valid_size);
 
 // CALCULATOR MODULE
 void mod1_calc();
+
+//Calculate Area and Rectangle
+void mod2_calculate();
 #endif // MAIN_HEADER_H

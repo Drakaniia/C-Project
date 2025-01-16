@@ -1,12 +1,13 @@
 #include "main_header.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 // MAIN METHOD FOR EXECUTION
 
 /*
   // Compile the program with the following command:
-    gcc -I./headers sources\main.c sources\calculator.c sources\menu_app.c sources\bank_system.c sources\temp_conversion.c -o allapp -Wall -g
+    gcc -I./headers sources\main.c sources \calculate.c sources\ calculator.c sources\menu_app.c sources\bank_system.c sources\temp_conversion.c -o allapp -Wall -g
 
   // run the program with the following command:
     .\allapp
@@ -30,12 +31,19 @@ int main() {
       case 1:
         mod1_calc();
         break;
+      case 2:
+        mod2_calculate();
+        break;
       case 3:
         mod3_tempConversion();
         break;
       case 4:
         mod4_bankSystem();
+        getchar();
         break;
+      case 5:
+        printf("\033[1;35mExiting the program...\033[0m\n\n");                       // Purple
+        exit(0);
       default:
         printf("Invalid Choice! Please try again.\n");
         break;

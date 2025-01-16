@@ -22,7 +22,7 @@ static void menuDisplay() {
   printf("\033[1;36m[2] Polygon Area Calculator\033[0m\n"); 
   printf("\033[1;34m[3] Temperature Conversion\033[0m\n");      // Blue
   printf("\033[1;33m[4] Bank Management System\033[0m\n");    // Yellow
-  
+  printf("\033[1;35m[5] Exit\033[0m\n");                       // Purple
 }
 
 // Application choice validation
@@ -30,12 +30,12 @@ int valid1_appChoice() {
   int appChoice;
 
   while (true) {
-    printf("Enter your choice (1, 2, 3, or 4): ");
-    if (scanf("%d", &appChoice) == 1 && (appChoice >= 1 && appChoice <= 4)) {
+    printf("Enter your choice (1, 2, 3, 4 or 5 to exit): ");
+    if (scanf("%d", &appChoice) == 1 && (appChoice >= 1 && appChoice <= 5)) {
       while (getchar() != '\n'); 
       return appChoice;
     }
-    printf("Invalid input! Please enter a valid choice (1, 2, 3, or 4).\n");
+    printf("Invalid input! Please enter a valid choice (1, 2, 3, 4 or 5 to exit).\n");
     while (getchar() != '\n');
   }
 
