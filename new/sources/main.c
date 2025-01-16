@@ -31,9 +31,6 @@ int main() {
       case 1:
         mod1_calc();
         break;
-      case 2:
-        mod2_calculate();
-        break;
       case 3:
         mod3_tempConversion();
         break;
