@@ -8,20 +8,28 @@ float multiply(float a, float b);
 float divide(float a, float b);
 
 void mod1_calc() {
-    float num1, num2, result;
-    int choice;
+  float num1, num2, result;
+  int choice;
 
-  printf("Simple Calculator\n\n");
+  do {
+    printf("Enter first number: ");
+    if (scanf("%f", &num1) != 1) {
+      printf("Invalid input. Please enter a valid number.\n");
+      while (getchar() != '\n'); // Clear input buffer
+    }
 
-  printf("Enter first number: ");
-    scanf("%f", &num1);
     printf("Enter second number: ");
-    scanf("%f", &num2); 
+    if (scanf("%f", &num2) != 1) {
+      printf("Invalid input. Please enter a valid number.\n");
+      while (getchar() != '\n'); // Clear input buffer
+    }
 
     displayMenu();
-    printf("Choose an operation (1-4): ");
-    scanf("%d", &choice);
-    getchar(); // Clear input buffer
+    printf("Choose an operation (1-5): ");
+    if (scanf("%d", &choice) != 1) {
+      printf("Invalid input. Please enter a valid choice.\n");
+      while (getchar() != '\n'); // Clear input buffer
+    }
 
     switch (choice) {
       case 1:
@@ -44,12 +52,27 @@ void mod1_calc() {
           printf("Error: Division by zero is not allowed.\n");
         }
         break;
+      case 5:
+        printf("Goodbye!\n");
+        break;
       default:
         printf("Invalid choice. Please select a valid operation.\n");
     }
-  
 
+    printf("\nDo you want to continue? (y/n): ");
+    char response;
+    scanf(" %c", &response); 
+    if (response == 'y' || response == 'Y') {
+      getchar(); // Clear input buffer
+    } else {
+      break;
+    }
+  } while (response == 'y' || response == 'Y');
+
+  return 0;
 }
+
+
 
 void displayMenu() {
   printf("\n");
