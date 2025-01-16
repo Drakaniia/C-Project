@@ -10,6 +10,7 @@ float divide(float a, float b);
 void mod1_calc() {
   float num1, num2, result;
   int choice;
+  char response;
 
   do {
     printf("Enter first number: ");
@@ -60,7 +61,6 @@ void mod1_calc() {
     }
 
     printf("\nDo you want to continue? (y/n): ");
-    char response;
     scanf(" %c", &response); 
     if (response == 'y' || response == 'Y') {
       getchar(); // Clear input buffer
