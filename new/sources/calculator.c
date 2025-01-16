@@ -60,6 +60,7 @@ do {
         response = 'n';
     }
 } while (response == 'y' || response == 'Y');
+}
 
 void displayMenu() {
     printf("\n");
