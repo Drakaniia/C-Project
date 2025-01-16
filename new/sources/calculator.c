@@ -63,8 +63,7 @@ void mod1_calc() {
         printf("\nDo you want to continue? (y/n): ");
         scanf(" %c", &response);
     } while (response == 'y' || response == 'Y');
-
-    return 0;
+  return 0;
 }
 
 void displayMenu() {

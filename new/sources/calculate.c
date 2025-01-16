@@ -46,8 +46,6 @@ void mod2_calculate() {
                 printf("Invalid choice. Please choose a valid option.\n");
         }
     } while (choice != 3);
-
-    return 0;
 }
 
 // Function definitions
