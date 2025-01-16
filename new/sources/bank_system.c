@@ -37,6 +37,25 @@ static double check_balance(Bank *bank,
 
 static int close_account(Bank *bank, 
           int account_number);
+/*
+static void menuVal_bankChoice(int *menuChoice) {
+  while (1) {
+    printf("Enter your choice: ");
+    if (scanf("%d", menuChoice) == 1) {
+      break;
+    }
+    printf("Invalid input. Please enter a valid choice.\n");
+    while (getchar() != '\n'); // Clear invalid input
+  }
+}
+*/
+
+/*
+// Usage
+int account_number;
+input_account_number(&account_number);
+
+*/
 
 // Function to manage the bank system
 void mod4_bankSystem() {
@@ -58,6 +77,7 @@ void mod4_bankSystem() {
     printf("5. Close Account\n");
     printf("6. \033[1;35mExit\033[0m\n");
     printf("Enter your choice: ");
+    // menuVal_bankChoice(&choice);
     scanf("%d", &choice);
 
     switch (choice) {
