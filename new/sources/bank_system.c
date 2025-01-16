@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define MAX_ACCOUNTS 100
 
@@ -37,29 +38,39 @@ static double check_balance(Bank *bank,
 
 static int close_account(Bank *bank, 
           int account_number);
+
 /*
-static void menuVal_bankChoice(int *menuChoice) {
-  while (1) {
+void menuVal(int *choiceVal) {
+  char input[100];
+  
+  while (true) {
     printf("Enter your choice: ");
-    if (scanf("%d", menuChoice) == 1) {
-      break;
+    
+    if (fgets(input, sizeof(input), stdin) != NULL) {
+      // Check if the input is empty or only contains a newline
+      if (input[0] == '\n') {
+        printf("Input cannot be blank. Please try again.\n");
+        continue;
+      }
+      // Attempt to parse the input as an integer
+      if (sscanf(input, "%d", choiceVal) == 1) {
+        // Check if the number is within the valid range
+        if (*choiceVal > 0 && *choiceVal < 7) {
+          break;
+        }
+        printf("Error: Number must be between 1 and 6.\n");
+      } else {
+        printf("Invalid input. Please enter a valid integer.\n");
+      }
     }
-    printf("Invalid input. Please enter a valid choice.\n");
-    while (getchar() != '\n'); // Clear invalid input
+  }
   }
 }
 */
 
-/*
-// Usage
-int account_number;
-input_account_number(&account_number);
-
-*/
-
 // Function to manage the bank system
 void mod4_bankSystem() {
-    Bank bank;
+  Bank bank;
     
   init_bank(&bank);
   int account_number, choice;
@@ -77,7 +88,7 @@ void mod4_bankSystem() {
     printf("5. Close Account\n");
     printf("6. \033[1;35mExit\033[0m\n");
     printf("Enter your choice: ");
-    // menuVal_bankChoice(&choice);
+    // menuVal(&choice);
     scanf("%d", &choice);
 
     switch (choice) {
