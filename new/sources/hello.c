@@ -1,6 +1,8 @@
+#include "main_header.h"
 #include <stdio.h>
 
-int main() {
+void anotherFile() {
+  
   printf("Hello, World!\n");
-  return 0;
+  
 }

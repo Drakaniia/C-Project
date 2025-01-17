@@ -19,4 +19,7 @@ void mod1_calc();
 
 //Calculate Area and Rectangle
 
+void anotherFile();
+
+
 #endif // MAIN_HEADER_H
