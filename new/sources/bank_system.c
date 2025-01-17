@@ -40,8 +40,9 @@ static int close_account(Bank *bank,
           int account_number);
 
 /*
-void menuVal(int *choiceVal) {
+static void menuVal(int *choiceVal) {
   char input[100];
+  int c;
   
   while (true) {
     printf("Enter your choice: ");
@@ -54,6 +55,8 @@ void menuVal(int *choiceVal) {
       }
       // Attempt to parse the input as an integer
       if (sscanf(input, "%d", choiceVal) == 1) {
+        while ((c = getchar()) != '\n' && c != EOF);// Clearing input buffer
+
         // Check if the number is within the valid range
         if (*choiceVal > 0 && *choiceVal < 7) {
           break;
@@ -64,13 +67,13 @@ void menuVal(int *choiceVal) {
       }
     }
   }
-  }
 }
 */
 
 // Function to manage the bank system
 void mod4_bankSystem() {
   Bank bank;
+  // int clear;
     
   init_bank(&bank);
   int account_number, choice;
@@ -88,8 +91,10 @@ void mod4_bankSystem() {
     printf("5. Close Account\n");
     printf("6. \033[1;35mExit\033[0m\n");
     printf("Enter your choice: ");
-    // menuVal(&choice);
     scanf("%d", &choice);
+    // menuVal(&choice);
+    // getchar();
+    // while ((clear = getchar()) != '\n' && clear != EOF);// Clearing input buffer
 
     switch (choice) {
       case 1:
@@ -103,7 +108,7 @@ void mod4_bankSystem() {
         scanf("%lf", &amount);
         create_account(&bank, account_number, name, amount);
         printf("Account created successfully!\n");
-        break;
+        break; 
 
       case 2:
         printf("Enter account number: ");
