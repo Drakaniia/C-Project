@@ -2,11 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 // TEMPERATURE CONVERSION MODULE
 
 // Temperature conversion menu display
-static void tempConMenuDisplay();
+static int tempConMenuDisplay(int *conversionChoice);
 
 // Kelvin to Celsius and Fahrenheit conversion
 static void tempKelvin();
@@ -17,43 +18,78 @@ static void tempCelsius();
 // Fahrenhiet to Celsius and Kelvin conversion
 static void tempFahrenhiet();
 
-
-// Main function call to main.c
+// TEMP CONVERSION MODULE CALL TO MAIN  
 void mod3_tempConversion() {
-  // float Celsius, Kelvin, Fahrenhiet;
   int choice;
+  char anotherConversion[10]; // Buffer for "yes" or "no"
 
-  tempConMenuDisplay();
-  choice = valid1_appChoice();
+  do {
+    // Display the temperature conversion menu
+    tempConMenuDisplay(&choice);
 
-  // tempConMenuDisplay(&choice);
+    switch (choice) {
+      case 1:
+        tempKelvin();
+        break;
+      case 2:
+        tempCelsius();
+        break;
+      case 3:
+        tempFahrenhiet();
+        break;
+      default:
+        printf("Invalid Choice! Please try again.\n");
+        break;
+    }
 
-  switch (choice) {
-  case 1:
-    tempKelvin();
-    getchar();
-    break;
-  case 2:
-    tempCelsius();
-    getchar();
-    break;
-  case 3:
-    tempFahrenhiet();
-    getchar();
-    break;
-  default:
-    printf("Invalid Choice! Please try again.\n");
-    break;
-  }  
+    // Ask if the user wants another conversion
+    do {
+      printf("\nDo you want another conversion? (yes/no): ");
+
+      if (fgets(anotherConversion, sizeof(anotherConversion), stdin) != NULL) {
+          anotherConversion[strcspn(anotherConversion, "\n")] = '\0'; // Remove newline
+      }
+      
+      // Clear the input buffer if necessary (only once after fgets)
+      while (getchar() != '\n' && getchar() != EOF); 
+      
+      // Check if the input is valid
+      if (strcasecmp(anotherConversion, "yes") != 0 && 
+          strcasecmp(anotherConversion, "no") != 0) {
+          printf("Invalid input. Please enter 'yes' or 'no'.");
+      }
+
+    } while (strcasecmp(anotherConversion, "yes") != 0 &&
+            strcasecmp(anotherConversion, "no") != 0);
+
+
+  } while (strcasecmp(anotherConversion, "yes") == 0);
 }
 
+
 // Temperature conversion menu display
-static void tempConMenuDisplay() {
+static int tempConMenuDisplay(int *conversionChoice) {
   printf("\n\033[1;34mTemperature Conversion Program\033[0m\n");
   printf("Choose the unit you want to convert:\n");
   printf("[1] Kelvin\n");
   printf("[2] Celsius\n");
-  printf("[3] Fahrenhiet\n");
+  printf("[3] Fahrenheit\n");
+
+  // int conversionChoice;
+  while (true) {
+    printf("Enter your choice (1-3): ");
+    if (scanf("%d", conversionChoice) == 1 && 
+                        *conversionChoice >= 1 && 
+                        *conversionChoice <= 3) {
+      while (getchar() != '\n'); // Clear input buffer
+      break;
+    } else {
+      printf("Invalid input. Please enter a number between 1 and 3.\n");
+      while (getchar() != '\n'); // Clear input buffer
+    }
+  }
+
+  return *conversionChoice;
 }
 
 // Kelvin to Celsius and Fahrenheit conversion
