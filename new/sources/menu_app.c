@@ -54,7 +54,7 @@ int valid1_appChoice() {
 char* valid2_againChoice(char *againChoice) {
 
   while (true) {
-    printf("do you want another? yes or no: ");
+    printf("Do you want to exit? yes or no: ");
     if (fgets(againChoice, 100, stdin)) {  // Assuming buffer size of 100
       againChoice[strcspn(againChoice, "\n")] = '\0';  // Remove newline
       if (againChoice[0] == '\0') {

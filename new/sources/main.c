@@ -56,6 +56,7 @@ int main() {
 
   } while (strcasecmp(againChoice, "Yes") != 0);
 
+  printf("\033[1;35mExiting the program...\033[0m\n\n");// Purple
   // Successful executions, hhaha.
   return 0;
 }
