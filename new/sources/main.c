@@ -31,6 +31,11 @@ int main() {
       case 1:
         mod1_calc();
         break;
+      /*
+      case 2:
+        anotherFile();
+        break;
+      */
       case 3:
         mod3_tempConversion();
         break;
@@ -47,10 +52,12 @@ int main() {
     }
 
     // Another app choice with validation
-    valid2_againChoice(againChoice, sizeof(againChoice));
+    valid2_againChoice(againChoice);
 
   } while (strcasecmp(againChoice, "Yes") != 0);
 
+  printf("\033[1;35mExiting the program...\033[0m\n\n");// Purple
+  // Successful executions, hhaha.
   return 0;
 }
 
