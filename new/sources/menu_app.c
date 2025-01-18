@@ -29,6 +29,7 @@ static void menuDisplay() {
 int valid1_appChoice() {
   int appChoice;
 
+  /*
   while (true) {
     printf("Enter your choice (1, 2, 3, 4 or 5 to exit): ");
     if (scanf("%d", &appChoice) == 1 && (appChoice >= 1 && appChoice <= 5)) {
@@ -37,6 +38,26 @@ int valid1_appChoice() {
     }
     printf("Invalid input! Please enter a valid choice (1, 2, 3, 4 or 5 to exit).\n");
     while (getchar() != '\n');
+  }
+  */
+
+ while (true) {
+    char buffer[50];
+
+    printf("Enter app choice: ");
+    if (fgets(buffer, sizeof(buffer), stdin)) {
+      if (buffer[0] == '\n') {
+        printf("Invalid choice. Enter another choice.\n");
+      } else if (sscanf(buffer, "%d", &appChoice) == 1) {
+        if (appChoice >= 1 && appChoice <= 6) {
+          break;
+        } else {
+          printf("Choice out of range!\n");
+        }
+      } else {
+        printf("Invalid choice! Enter another app choice.\n");
+      }
+    }
   }
 
   return appChoice;
