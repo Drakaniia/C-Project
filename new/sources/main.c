@@ -52,7 +52,7 @@ int main() {
     }
 
     // Another app choice with validation
-    valid2_againChoice(againChoice, sizeof(againChoice));
+    valid2_againChoice(againChoice);
 
   } while (strcasecmp(againChoice, "Yes") != 0);
 
