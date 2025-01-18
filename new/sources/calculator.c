@@ -20,7 +20,7 @@ void mod1_calc() {
         // Get numbers from user
         printf("Enter 1st number/s: ");
         while (scanf("%f", &num1) != 1) {
-            printf("Invalid input. Please enter a valid number.\n");
+            printf("Invalid input. Please enter a valid number.");
             while(getchar() != '\n'); // clear invalid input
             continue; // continue
         }
@@ -34,7 +34,7 @@ void mod1_calc() {
         
         displayMenu();
         if (scanf("%d", &choice) != 1) {
-            printf("Invalid input. Please enter a number from 1-5.");
+            printf("Invalid input. Please enter a valid character (y/n): ");
             while(getchar() != '\n'); // clear invalid input
             continue;
         }   
@@ -72,11 +72,10 @@ void mod1_calc() {
         // Ask user if they want to continue
         if (choice != 5) {
             printf("\nDo you want to continue? (y/n): ");
-            while (scanf(" %c", &response) != 1) {
-            printf("Invalid input. Please enter a number from 1-5.");
-            while(getchar() != '\n'); // clear invalid input
-            continue;
-            }   
+            while (scanf(" %c", &response) != 1 || (response != 'y' && response != 'Y' && response != 'n' && response != 'N')) {
+                printf("Invalid input. Please enter 'y' or 'n': ");
+                while(getchar() != '\n'); // clear invalid input
+            }
         } else {
             response = 'n';
         }
