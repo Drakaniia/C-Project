@@ -1,6 +1,7 @@
 #include "main_header.h"
 #include <stdio.h>
 
+void title();
 void displayMenu();
 float add(float a, float b);
 float subtract(float a, float b);
@@ -11,25 +12,33 @@ void mod1_calc() {
     float num1, num2, result;
     int choice;
     char response;
+
     do {
-        // Display menu and get user choice
-        displayMenu();
-        printf("Enter your choice: ");
-        if (scanf("%d", &choice) != 1) {
-            printf("Invalid input. Please enter a number.\n");
-            while(getchar() != '\n'); // clear invalid input
-            continue;
-        }
+        
+        title();
 
         // Get numbers from user
-        if (choice >= 1 && choice <= 4) {
-            printf("Enter two numbers: ");
-            if (scanf("%f %f", &num1, &num2) != 2) {
-                printf("Invalid input. Please enter two numbers.\n");
-                while(getchar() != '\n'); // clear invalid input
-                continue;
-            }
+        printf("Enter 1st number/s: ");
+        while (scanf("%f", &num1) != 1) {
+            printf("Invalid input. Please enter a valid number.");
+            while(getchar() != '\n'); // clear invalid input
+            continue; // continue
         }
+
+        printf("Enter 2nd number/s: ");
+        while (scanf("%f", &num2) != 1) {
+            printf("Invalid input. Please enter a valid number.");
+            while(getchar() != '\n'); // clear invalid input
+            continue; // continue
+        }
+        
+        displayMenu();
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input. Please enter a valid character (y/n): ");
+            while(getchar() != '\n'); // clear invalid input
+            continue;
+        }   
+        
 
         // Perform the chosen operation
         switch (choice) {
@@ -63,20 +72,27 @@ void mod1_calc() {
         // Ask user if they want to continue
         if (choice != 5) {
             printf("\nDo you want to continue? (y/n): ");
-            scanf(" %c", &response);
+            while (scanf(" %c", &response) != 1 || (response != 'y' && response != 'Y' && response != 'n' && response != 'N')) {
+                printf("Invalid input. Please enter 'y' or 'n': ");
+                while(getchar() != '\n'); // clear invalid input
+            }
         } else {
             response = 'n';
         }
     } while (response == 'y' || response == 'Y');
 }
 
+
+void title() {
+    printf("\nSimple Calculator \n");
+}
 void displayMenu() {
-    printf("\n");
     printf("1. Add\n");
     printf("2. Subtract\n");
     printf("3. Multiply\n");
     printf("4. Divide\n");
-    printf("5. Exit\n"); // Added exit option to the menu
+    printf("5. Exit\n\n\n");
+    printf("Choose an Operator: "); // Added exit option to the menu
 }
 
 float add(float a, float b) {
