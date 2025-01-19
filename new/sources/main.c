@@ -48,6 +48,7 @@ int main() {
         exit(0);
       default:
         printf("Invalid Choice! Please try again.\n");
+        // appChoice = valid1_appChoice();
         break;
     }
 

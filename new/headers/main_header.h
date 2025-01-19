@@ -13,14 +13,11 @@ void mod5_menuPrompts();
 // Input validation prototypes
 int valid1_appChoice();
 char* valid2_againChoice(char *againChoice);
-// char* valid2_againChoice(char* againChoice, int valid_size);
 
 // CALCULATOR MODULE
 void mod1_calc();
 
 // Calculate Area and Rectangle
-
-// void anotherFile();
 
 
 #endif // MAIN_HEADER_H

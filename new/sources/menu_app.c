@@ -18,7 +18,7 @@ static void menuDisplay() {
 
   printf("\n[BASIC APPLICATION]\n");
   printf("\033[1;31m[1] Calculator\033[0m\n");
-  printf("\033[1;36m[2] Hello!\033[0m\n"); 
+  // printf("\033[1;36m[2] Hello!\033[0m\n"); 
   printf("\033[1;34m[3] Temperature Conversion\033[0m\n");      // Blue
   printf("\033[1;33m[4] Bank Management System\033[0m\n");    // Yellow
   printf("\033[1;35m[5] Exit\033[0m\n");                       // Purple
@@ -49,7 +49,6 @@ int valid1_appChoice() {
 
   return appChoice;
 }
-
 
 char* valid2_againChoice(char *againChoice) {
 
