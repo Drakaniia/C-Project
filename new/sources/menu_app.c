@@ -42,7 +42,7 @@ int valid1_appChoice() {
           printf("Choice out of range!\n");
         }
       } else {
-        printf("Invalid choice! Enter another app choice.\n");
+        printf("\nInvalid choice! Enter another app choice.\n");
       }
     }
   }
@@ -53,7 +53,7 @@ int valid1_appChoice() {
 char* valid2_againChoice(char *againChoice) {
 
   while (true) {
-    printf("Do you want to exit? yes or no: ");
+    printf("\nDo you want to exit? yes or no: ");
     if (fgets(againChoice, 100, stdin)) {  // Assuming buffer size of 100
       againChoice[strcspn(againChoice, "\n")] = '\0';  // Remove newline
       if (againChoice[0] == '\0') {
