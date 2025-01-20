@@ -55,8 +55,6 @@ void mod2_polygon_area() {
         } while (strcasecmp(anotherConversion, "yes") != 0 &&
                  strcasecmp(anotherConversion, "no") != 0);
     } while (strcasecmp(anotherConversion, "yes") == 0);
-
-    return 0;
 }
 
 void title() {
