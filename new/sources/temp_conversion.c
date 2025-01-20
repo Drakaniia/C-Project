@@ -13,7 +13,7 @@ static int tempConMenuDisplay(int *conversionChoice);
 static void tempKelvin();
 
 // Celsius to Kelvin and Fahrenheit conversion
-static void tempCelsius();
+static void tempCelsius();  
 
 // Fahrenhiet to Celsius and Kelvin conversion
 static void tempFahrenhiet();
