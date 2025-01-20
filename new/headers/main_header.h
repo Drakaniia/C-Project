@@ -18,9 +18,8 @@ char* valid2_againChoice(char *againChoice);
 // CALCULATOR MODULE
 void mod1_calc();
 
-// Calculate Area and Rectangle
-
-// void anotherFile();
+// Calculate Area Polygon
+void mod2_polygon_area();
 
 
 #endif // MAIN_HEADER_H
