@@ -7,7 +7,7 @@
 
 /*
   // Compile the program with the following command:
-    gcc -I./headers sources\main.c sources\calculator.c sources\menu_app.c sources\bank_system.c sources\temp_conversion.c -o allapp -Wall -g
+    gcc -I./headers sources\main.c sources\calculator.c sources\polygon_area.c sources\menu_app.c sources\bank_system.c sources\temp_conversion.c -o allapp -Wall -g
 
   // run the program with the following command:
     .\allapp
