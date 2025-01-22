@@ -106,5 +106,3 @@ static void areaRectangle() {
     result = length * width;
     printf("The area of a rectangle with length %.2lf and width %.2lf is %.2lf\n", length, width, result);
 }
-
-// Okay na bowwss! HHAHAHAHA
