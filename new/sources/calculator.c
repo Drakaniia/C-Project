@@ -1,4 +1,5 @@
 #include "main_header.h"
+#include "config.h"
 #include <stdio.h>
 
 void title();
