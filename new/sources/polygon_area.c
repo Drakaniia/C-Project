@@ -4,23 +4,34 @@
 #include <math.h>
 
 // Function prototypes
-static void title();
+static void PolygonCalculator();
+static void mainTitle();
 static void displayMenu();
 static void areaCircle();
 static void areaSquare();
 static void areaRectangle();
+static void areaTriangle();
 
 void mod2_polygon_area() {
-    int choice;
-    char anotherConversion[10];
 
-    title();
-    displayMenu();
+    PolygonCalculator();
+}
+
+
+static void PolygonCalculator() {
+    mainTitle();
+
+    int choice;
+    char response;
 
     do {
+        displayMenu();
         printf("Enter your choice: ");
-        scanf("%d", &choice);
-        getchar();
+        while (scanf("%d", &choice) != 1 || choice < 1 || choice > 4) {
+            while (getchar() != '\n');
+            printf("Invalid Input. Please enter a number between 1 and 4: ");
+        }
+
 
         switch (choice) {
             case 1:
@@ -32,37 +43,17 @@ void mod2_polygon_area() {
             case 3:
                 areaRectangle();
                 break;
+            case 4:
+                areaTriangle();
+                break;
             default:
                 printf("Invalid choice.\n");
                 break;
         }
+    printf("\nDo you want another Conversion? y/n: ");
+    scanf(" %c", &response);
 
-        do {
-            printf("\nDo you want another conversion? (yes/no): ");
-            if (fgets(anotherConversion, sizeof(anotherConversion), stdin) != NULL) {
-                anotherConversion[strcspn(anotherConversion, "\n")] = '\0';
-            }
-
-            while (getchar() != '\n' && getchar() != EOF);
-
-            if (strcasecmp(anotherConversion, "yes") != 0 &&
-                strcasecmp(anotherConversion, "no") != 0) {
-                printf("Invalid input. Please enter 'yes' or 'no'.");
-            }
-        } while (strcasecmp(anotherConversion, "yes") != 0 &&
-                 strcasecmp(anotherConversion, "no") != 0);
-    } while (strcasecmp(anotherConversion, "yes") == 0);
-}
-
-static void title() {
-    printf("Polygon Calculator.\n\n");
-}
-
-static void displayMenu() {
-    printf("Choose an option:\n");
-    printf("1. Calculate area of Circle.\n");
-    printf("2. Calculate area of Square.\n");
-    printf("3. Calculate area of Rectangle.\n");
+    } while (response == 'y');
 }
 
 static void areaCircle() {
@@ -87,7 +78,7 @@ static void areaSquare() {
         printf("Invalid Input, Enter a valid Length of a Square: ");
     }
     result = side * side;
-    printf("The area of a square with side %.2lf is %.2lf\n", side, result);
+    printf("The area of a square with side of %.2lf is %.2lf\n", side, result);
 }
 
 static void areaRectangle() {
@@ -104,5 +95,45 @@ static void areaRectangle() {
         printf("Invalid Input, Enter a valid Width of a Rectangle: ");
     }
     result = length * width;
-    printf("The area of a rectangle with length %.2lf and width %.2lf is %.2lf\n", length, width, result);
+    printf("The area of a rectangle with length of %.2lf and width of %.2lf is %.2lf\n", length, width, result);
 }
+
+
+static void areaTriangle() {
+    double base, height, result;
+
+    printf("Enter the Base: ");
+    while (scanf("%lf", &base) != 1 || base <= 0) {
+        while (getchar() != '\n');
+        printf("Invalid Input, Enter a Valid Base (greater than 0): ");
+    }
+
+    printf("Enter the Height: ");
+    while (scanf("%lf", &height) != 1 || height <= 0) {
+        while (getchar() != '\n');
+        printf("Invalid Input, Enter a Valid Height (greater than 0): ");
+    }
+
+    result = 0.5 * base * height;
+    printf("The area of a triangle with base of %.2lf and height of %.2lf is %.2lf\n", base, height, result);
+}
+
+static void displayMenu() {
+    printf("Choose an option:\n");
+    printf("[1] Calculate area of Circle.\n");
+    printf("[2] Calculate area of Square.\n");
+    printf("[3] Calculate area of Rectangle.\n");
+    printf("[4] Calculate area of Triangle.\n");
+}
+
+static void mainTitle() {
+    printf("\033[0;31mPo\033[0m");
+    printf("\033[0;33mlyg\033[0m");
+    printf("\033[0;33mon\033[0m");
+    printf(" ");
+    printf("\033[0;32mCal\033[0m");
+    printf("\033[0;34mcu\033[0m");
+    printf("\033[0;34mlat\033[0m");
+    printf("\033[0;31mor\n\n\033[0m");
+}
+
